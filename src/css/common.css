@@ -20,7 +20,6 @@ img {
 button {
   width: 100px;
   height: 50px;
-  line-height: 45px;
   border-radius: 45px;
   margin: 10px 20px;
   text-transform: uppercase;
@@ -31,6 +30,7 @@ button {
   transition: 0.3s;
 }
 button:hover {
+  cursor: pointer;
   background: #2ee59d;
   color: white;
   transform: translateY(-7px);
@@ -39,4 +39,11 @@ button[data-stop]:hover {
   background: #e52e56;
   color: white;
   transform: translateY(-7px);
+}
+
+.value {
+  font-size: 40px;
+}
+.label {
+  text-transform: uppercase;
 }
