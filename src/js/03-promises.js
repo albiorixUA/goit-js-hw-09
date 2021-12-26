@@ -18,8 +18,7 @@ function onFormSubmit(event) {
       .then(({ position, delay }) => {
         setTimeout(() => {
           Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-        }),
-          delay;
+        });
       })
       .catch(({ position, delay }) => {
         setTimeout(() => {

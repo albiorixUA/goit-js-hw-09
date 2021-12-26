@@ -34,14 +34,17 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 function onClickStartBnt() {
-  setInterval(() => {
+  refs.startBtn.setAttribute('disabled', true);
+  const timerID = setInterval(() => {
     const deltaTime = selectedDateInput - Date.now();
     const { days, hours, minutes, seconds } = convertMs(deltaTime);
-
     refs.days.textContent = days;
     refs.hours.textContent = hours;
     refs.minutes.textContent = minutes;
     refs.seconds.textContent = seconds;
+    if (deltaTime < 1000) {
+      clearTimeout(timerID);
+    }
   }, 1000);
 }
 
